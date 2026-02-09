@@ -1,0 +1,17 @@
+src/
+├── App.jsx
+├── components/
+│   ├── Navigation.jsx
+│   ├── TopicSelector.jsx
+│   ├── Pomodoro/
+│   │   ├── PomodoroModule.jsx
+│   │   └── Timer.jsx
+│   └── Flashcards/
+│       ├── FlashcardsModule.jsx
+│       └── Flashcard.jsx
+├── hooks/
+│   └── usePomodoroTimer.js
+├── styles/
+│   └── flashcard.css
+└── utils/
+    └── formatTime.js

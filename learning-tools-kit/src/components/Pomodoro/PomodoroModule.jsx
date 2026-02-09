@@ -46,6 +46,7 @@ return(
     <div>
         <h2>Pomodoro Timer</h2>
         <div>{formatTime(timer.seconds)}</div>
+        <div>Licznik sessji{timer.prevSessions}</div>
         <div>
             <button onClick={timer.start}>Start</button>
             <button onClick={timer.reset}>Reset</button>

@@ -1,0 +1,32 @@
+{
+  "topicId": "react-hooks-useEffect",
+  "title": "React Hooks - useEffect",
+  "estimatedMinutes": 20,
+
+  "learningContent": {
+    "markdown": "# React Hook - useEffect\n\n## Podstawowa składnia\n\n```jsx\nuseEffect(() => {\n  // kod do wykonania\n}, [dependencies]);\n```\n\n## Przykład - licznik\n\n```jsx\nimport { useState, useEffect } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  useEffect(() => {\n    console.log('Count zmienił się:', count);\n  }, [count]);\n\n  return (\n    <div>\n      <p>Kliknięto: {count} razy</p>\n      <button onClick={() => setCount(count + 1)}>Kliknij</button>\n    </div>\n  );\n}\n```",
+    "keyPoints": [
+      "useEffect pozwala reagować na zmiany stanu lub props",
+      "Można użyć dependency array, żeby kontrolować kiedy efekt działa",
+      "Efekty czyszczące (cleanup) są ważne przy subskrypcjach"
+    ]
+  },
+
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Co robi hook useEffect?",
+      "answer": "Pozwala wykonać efekt uboczny po zmianie stanu lub props"
+    },
+    {
+      "id": "q2",
+      "question": "Jak wykonać efekt tylko raz po mount?",
+      "answer": "Podając pustą tablicę zależności: []"
+    },
+    {
+      "id": "q3",
+      "question": "Do czego służy funkcja cleanup w useEffect?",
+      "answer": "Do czyszczenia subskrypcji, timerów lub zdarzeń"
+    }
+  ]
+}

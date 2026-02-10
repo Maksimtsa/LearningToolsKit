@@ -1,0 +1,44 @@
+{
+  "topicId": "react-hooks-useState",
+  "title": "React Hooks - useState",
+  "estimatedMinutes": 20,
+  
+  "learningContent": {
+    "markdown": "# React Hook - useState\n\n## Podstawowa składnia\n\n```jsx\nconst [wartość, setWartość] = useState(wartośćPoczątkowa);\n```\n\n## Przykład - Licznik\n\n```jsx\nimport { useState } from 'react';\n\nfunction Counter() {\n  const [count, setCount] = useState(0);\n\n  return (\n    <div>\n      <p>Kliknięto: {count} razy</p>\n      <button onClick={() => setCount(count + 1)}>\n        Kliknij\n      </button>\n    </div>\n  );\n}\n```\n\n## Aktualizacja z poprzednią wartością\n\n```jsx\n// Bezpieczniejsze:\nsetCount(prevCount => prevCount + 1);\n```\n\n## State jako obiekt\n\n```jsx\nconst [user, setUser] = useState({ name: 'Jan', age: 25 });\n\n// WAŻNE: spread operator!\nsetUser(prev => ({ ...prev, age: 26 }));\n```\n\n## Najczęstsze błędy\n\n❌ `count = 5` // Nie możesz bezpośrednio!\n\n✅ `setCount(5)` // Zawsze przez setter",
+    
+    "keyPoints": [
+      "useState zwraca [wartość, setter]",
+      "Setter powoduje re-render",
+      "Użyj funkcji w setterze: prev => prev + 1",
+      "Nigdy nie modyfikuj state bezpośrednio"
+    ]
+  },
+  
+  "questions": [
+    {
+      "id": "q1",
+      "question": "Jak zadeklarować state licznika o wartości 0?",
+      "answer": "const [count, setCount] = useState(0);"
+    },
+    {
+      "id": "q2",
+      "question": "Co zwraca useState()?",
+      "answer": "Tablicę: [wartość, funkcja setter]"
+    },
+    {
+      "id": "q3",
+      "question": "Dlaczego setCount(prev => prev + 1) jest lepsze?",
+      "answer": "Bo prev jest zawsze aktualny, count może być nieaktualny"
+    },
+    {
+      "id": "q4",
+      "question": "Jak zaktualizować wiek w { name: 'Jan', age: 25 }?",
+      "answer": "setUser(prev => ({ ...prev, age: 26 }))"
+    },
+    {
+      "id": "q5",
+      "question": "Co się stanie gdy: count = 5?",
+      "answer": "Komponent się nie przerenderuje"
+    }
+  ]
+}

@@ -29,11 +29,11 @@ export default function App() {
       {!selectedTopic && (
         <div>
           <h3>Wybierz temat:</h3>
-          {topics.map(t => (
-            <button key={t.topicId} onClick={() => setSelectedTopic(t.topicId)}>
-              {t.title}
-            </button>
-          ))}
+            {topics.map(t => (
+              <button key={t.topicId} onClick={() => setSelectedTopic(t.topicId)}>
+                {t.title}
+              </button>
+            ))}
         </div>
       )}
 
